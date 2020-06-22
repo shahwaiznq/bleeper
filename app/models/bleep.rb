@@ -1,0 +1,2 @@
+class Bleep < ApplicationRecord
+end
