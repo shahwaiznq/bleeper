@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  
+  root :to => 'users#new'
+  
   get 'bleeptags/index'
   get 'bleeptags/new'
   get 'bleeptags/edit'
