@@ -1,2 +1,5 @@
-<h1>Bleeps#index</h1>
-<p>Find me in app/views/bleeps/index.html.erb</p>
+<h1>Bleeper!</h1>
+
+<% @bleeps.each do |bleep| %>
+  <p><%= bleep.content %></p>
+<% end %>
