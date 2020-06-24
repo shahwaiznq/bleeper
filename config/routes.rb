@@ -1,6 +1,5 @@
 Rails.application.routes.draw do
   
-  get 'session/new'
   root :to => 'bleeps#index'
   
   resources :bleeptags
