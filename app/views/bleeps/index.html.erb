@@ -1,9 +1,18 @@
-<h1>Bleeper!</h1>
+<%= stylesheet_link_tag "main-page" %>
 
-<%= link_to "Write a bleep", new_bleep_path %>
+<h1 class="main-heading">Bleeper!</h1>
+
+<%= link_to "Write a bleep", new_bleep_path, class: "new-bleep-btn" %>
 
 <% @bleeps.last(10).reverse.each do |bleep| %>
-  <p> <%= (User.find bleep.user_id).name %>: <%= bleep.content %> 
-  Posted at: <%= bleep.created_at %>
-  </p>
+
+  <div class="bleepbox">
+    <a href=" <%= user_path(bleep.user_id) %> "class="user"> <%= (User.find bleep.user_id).name %>: </a>
+    <p class="bleep-content"> <%= bleep.content %> </p> 
+    <p class="post-date"> Posted at: <%= bleep.created_at %> </p>
+
+  </div>
+  
+
+
 <% end %>

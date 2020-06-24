@@ -1,2 +1,22 @@
-<h1>Users#show</h1>
-<p>Find me in app/views/users/show.html.erb</p>
+<%= stylesheet_link_tag "main-page" %>
+
+<h1 class='username'> <%= @user.name%> </h1>
+<p>Number of bleeps: <%= @user.bleeps.count %></p>
+<p>Member since: <%= @user.created_at.strftime('%e %B %Y') %></p>
+
+<% if @user.id == @current_user.id %>
+ <%= link_to "Edit your profile", edit_user_path(@user.id)%>
+<% end %>
+
+<% @user.bleeps.last(10).reverse.each do |bleep| %>
+
+  <div class="bleepbox">
+    <a href=" <%= user_path(bleep.user_id) %> "class="user"> <%= (User.find bleep.user_id).name %>: </a>
+    <p class="bleep-content"> <%= bleep.content %> </p> 
+    <p class="post-date"> Posted at: <%= bleep.created_at %> </p>
+
+  </div>
+  
+
+
+<% end %>

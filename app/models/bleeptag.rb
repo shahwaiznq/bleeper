@@ -1,3 +1,3 @@
 class Bleeptag < ApplicationRecord
-    has_many :bleeps
+    has_and_belongs_to_many :bleeps
 end

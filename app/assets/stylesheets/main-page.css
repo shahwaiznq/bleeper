@@ -1,0 +1,38 @@
+.main-heading {
+    margin-top: 0.5em;
+    text-align: center;
+    color: darkgray;
+}
+
+.bleepbox {
+    margin: 10% 2%;
+    background-color: #eeeeee;
+    border-radius: 20px;
+    padding: 5%;
+    line-height: 1em;
+}
+
+.post-date {
+    font-size: 0.6em;
+}
+
+.new-bleep-btn {
+    display: block;
+    text-align: center;
+    width: 20em;
+    margin: 1em auto;
+    border-radius: 1em;
+    background-color: limegreen;
+    color: black;
+    font-weight: bolder;
+    padding: 0.5em 1em;
+}
+
+.bleep-content {
+    margin-top: 0.5em;
+    font-size: 1.5em;
+}
+
+.username {
+    margin-top: 0.5em;
+}

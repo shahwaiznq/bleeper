@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   resources :bleeptags
   resources :bleeps
 
-  resources :users, :only => [:index, :new, :create, :edit, :update]
+  resources :users, :only => [:index, :new, :edit, :show]
 
   get '/login' => 'session#new'
   post '/login' => 'session#create'
