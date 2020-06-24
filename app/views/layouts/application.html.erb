@@ -7,25 +7,27 @@
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   </head>
 
   <body>
+    <div class="container">
+      <nav>
+        <%= link_to "Home", root_path %>
 
-    <nav>
-      <%= link_to "Home", root_path %>
+        <% if @current_user.present? %>
+          <div>
+            <p>You are signed in as: <%= @current_user.name %> </p>
+            <%= link_to "Sign out", login_path, :method => 'delete' %>
+          </div>
 
-      <% if @current_user.present? %>
-        <div>
-          <p>You are signed in as: <%= @current_user.name %> </p>
-          <%= link_to "Sign out", login_path, :method => 'delete' %>
-        </div>
+        <% else %>
+          <%= link_to "Sign Up", new_user_path %>
+          <%= link_to "Sign In", login_path %>
+        <% end %>
+      </nav>
 
-      <% else %>
-        <%= link_to "Sign Up", new_user_path %>
-        <%= link_to "Sign In", login_path %>
-      <% end %>
-    </nav>
-
-    <%= yield %>
+      <%= yield %>
+  </div>
   </body>
 </html>

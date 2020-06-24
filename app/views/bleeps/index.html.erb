@@ -1,5 +1,9 @@
 <h1>Bleeper!</h1>
 
-<% @bleeps.each do |bleep| %>
-  <p><%= bleep.content %></p>
+<%= link_to "Write a bleep", new_bleep_path %>
+
+<% @bleeps.last(10).reverse.each do |bleep| %>
+  <p> <%= (User.find bleep.user_id).name %>: <%= bleep.content %> 
+  Posted at: <%= bleep.created_at %>
+  </p>
 <% end %>
