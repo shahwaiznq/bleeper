@@ -9,14 +9,19 @@ class BleepsController < ApplicationController
 
   def create
     bleep = Bleep.create bleep_params
-    @current_user.bleeps << bleep
     str = bleep_params[:content]
     if str != []
       str.scan(/#\w+/).flatten.each do |tag|
-        bleep_tag = Bleeptag.create :title => tag
-        bleep_tag.bleeps << bleep
+        if Bleeptag.find_by :title => tag
+          bleep_tag = Bleeptag.find_by :title => tag
+          bleep_tag.bleeps << bleep
+        else
+          bleep_tag = Bleeptag.create :title => tag
+          bleep_tag.bleeps << bleep
+        end
       end
     end
+    @current_user.bleeps << bleep
     redirect_to root_path
   end
 
