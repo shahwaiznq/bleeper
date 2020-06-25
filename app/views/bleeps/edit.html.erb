@@ -1,2 +1,9 @@
-<h1>Bleeps#edit</h1>
-<p>Find me in app/views/bleeps/edit.html.erb</p>
+<h1>Edit your bleep</h1>
+
+<%= form_for @bleep do |f| %>
+
+    <%= f.label "Bleep:" %>
+    <%= f.text_field :content %>
+
+    <%= f.submit "Update bleep!" %>
+<% end %>

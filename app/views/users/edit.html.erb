@@ -1,2 +1,30 @@
-<h1>Users#edit</h1>
-<p>Find me in app/views/users/edit.html.erb</p>
+<h1><%= @user.name %></h1>
+
+<% if @user.errors.any? %>
+  <ol>
+    <% @user.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+    <% end %>
+  </ol>
+<% end %>
+
+<%= form_for @user do |f| %>
+
+    <%= f.label "New Name" %>
+    <%= f.text_field :name %>
+
+    <%= f.label "New Email" %>
+    <%= f.email_field :email %>
+
+    <%= f.label "New Password" %>
+    <%= f.password_field :password %>
+
+    <%= f.label "Confirm New Password" %>
+    <%= f.password_field :password_confirmation %>
+
+    <%= f.submit "Update!" %>
+
+    <br><br>
+<% end %>
+
+<%= link_to "Delete my account (Irreversable - no warning)", user_path, :method => 'delete' %>

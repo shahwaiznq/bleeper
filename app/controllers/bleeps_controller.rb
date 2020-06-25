@@ -30,6 +30,14 @@ class BleepsController < ApplicationController
     @bleep = Bleep.find params[:id]
   end
 
+  def update
+    bleep = Bleep.find params[:id]
+    if bleep.user_id = @current_user.id
+      bleep.update bleep_params
+    end
+    redirect_to root_path
+  end
+
   def destroy
     bleep = Bleep.find params[:id]
     bleep.destroy
