@@ -1,6 +1,6 @@
 <%= stylesheet_link_tag "main-page" %>
 
-<h1 class='username'> <%= @user.name%> </h1>
+<h1 class='page_top'> <%= @user.name%> </h1>
 <p>Number of bleeps: <%= @user.bleeps.count %></p>
 <p>Member since: <%= @user.created_at.strftime('%e %B %Y') %></p>
 

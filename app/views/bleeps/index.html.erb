@@ -10,9 +10,13 @@
     <a href=" <%= user_path(bleep.user_id) %> "class="user"> <%= (User.find bleep.user_id).name %>: </a>
     <p class="bleep-content"> <%= bleep.content %> </p> 
     <p class="post-date"> Posted at: <%= bleep.created_at %> </p>
+    <% if @current_user.present? %>
+      <% if bleep.user_id == @current_user.id %>
+        <%= link_to "edit bleep", edit_bleep_path(bleep.id) %>
+        <%= link_to "delete bleep", bleep_path(bleep.id), :method => 'delete' %>
+      <% end %>
+    <% end %>
 
   </div>
-  
-
 
 <% end %>

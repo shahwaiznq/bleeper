@@ -1,6 +1,6 @@
 class BleeptagsController < ApplicationController
   def index
-    @bleeps = Bleeptag.all
+    @bleeptags = Bleeptag.all
   end
 
   def show

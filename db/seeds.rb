@@ -28,6 +28,13 @@ u3.bleeps << b4
 u3.bleeps << b5
 u3.bleeps << b6
 
+b1.user_id = u1.id
+b2.user_id = u3.id
+b3.user_id = u3.id
+b4.user_id = u3.id
+b5.user_id = u3.id
+b6.user_id = u3.id
+
 bt1.bleeps << b1
 bt1.bleeps << b2
 bt1.bleeps << b3

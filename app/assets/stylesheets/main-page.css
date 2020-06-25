@@ -9,11 +9,12 @@
     background-color: #eeeeee;
     border-radius: 20px;
     padding: 5%;
-    line-height: 1em;
+    line-height: 1.5em;
 }
 
 .post-date {
     font-size: 0.6em;
+    margin-bottom: 0%;
 }
 
 .new-bleep-btn {
@@ -33,6 +34,16 @@
     font-size: 1.5em;
 }
 
-.username {
+.page_top {
     margin-top: 0.5em;
+    margin-bottom: 1em;
+}
+
+nav {
+    height: 100vh;
+    border-radius: 10px;
+}
+
+small {
+    text-align: center;
 }

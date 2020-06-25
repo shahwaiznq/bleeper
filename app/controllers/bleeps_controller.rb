@@ -9,6 +9,7 @@ class BleepsController < ApplicationController
 
   def create
     bleep = Bleep.create bleep_params
+    bleep.user_id = @current_user.id
     str = bleep_params[:content]
     if str != []
       str.scan(/#\w+/).flatten.each do |tag|
@@ -26,9 +27,13 @@ class BleepsController < ApplicationController
   end
 
   def edit
+    @bleep = Bleep.find params[:id]
   end
 
-  def show
+  def destroy
+    bleep = Bleep.find params[:id]
+    bleep.destroy
+    redirect_to root_path
   end
 
   private
