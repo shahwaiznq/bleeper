@@ -1,11 +1,11 @@
-# README
+# BLEEPER a twitter alternative
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This is a Rails application that creates a basic twitter like page with the functionality to post 'tweets' to the public and add tags to them. It also allows posts to found via popular tags. Functionality also includes:
+- User accounts (creation, edit and delete)
+- Bleep edits and delete
 
-Things you may want to cover:
 
-* Ruby version
+* Ruby version 2.7.1
 
 * System dependencies
 
@@ -20,5 +20,3 @@ Things you may want to cover:
 * Services (job queues, cache servers, search engines, etc.)
 
 * Deployment instructions
-
-* ...
