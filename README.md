@@ -5,18 +5,22 @@ This is a Rails application that creates a basic twitter like page with the func
 - Bleep edits and delete
 
 
-* Ruby version 2.7.1
+Ruby version 2.7.1
 
-* System dependencies
+Configuration:
+-
+Gems neeeded:
+- gem 'bcrypt'
+- gem 'bootstrap'
+- gem 'jquery-rails'
+- gem 'pg'
 
-* Configuration
+## Database creation:
+As per above the database used for this is PostgreSQL ("pg"). A pg database must be active on the server machine.
 
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
+## Database initialization:
+The following Rails commands must be run to initialize the database:
+`rails db:migrate`
+`rails db:seed`
+If on local device start teh server with:
+`rails server`
