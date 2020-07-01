@@ -2,7 +2,11 @@
 
 <h1 class="main-heading">Bleeper!</h1>
 
+<% if @current_user == nil %>
+<%= link_to "Write a bleep", new_user_path, class: "new-bleep-btn" %>
+<% else %>
 <%= link_to "Write a bleep", new_bleep_path, class: "new-bleep-btn" %>
+<% end %>
 
 <% @bleeps.last(10).reverse.each do |bleep| %>
 
